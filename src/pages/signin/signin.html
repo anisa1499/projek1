@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding id="bg">
+  <img src="assets/imgs/loku.png">
+<form #f="ngForm" (ngSubmit)="onSignin(f)">
+  <ion-list text center>
+    <ion-item>
+      <ion-label fixed>Username</ion-label>
+      <ion-input type="text" name="name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type="password" 
+      name="password" 
+      required></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block type="submit" [disabled]="!f.valid">SIGN IN</button>
+  <button ion-button block (click)="Signup()">SIGN UP</button>
+</form>
+</ion-content>

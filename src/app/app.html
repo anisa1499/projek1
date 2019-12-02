@@ -1,19 +1,87 @@
-<ion-menu [content]="content">
+<ion-menu [content]="nav">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="secondary">      
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+      <button
+      ion-item
+      icon-left
+      (click)="onLoad(signinPage)">
+    <ion-icon name="log-in"></ion-icon>
+    Sign In
+  </button>
+  <button
+  ion-item
+  icon-left
+  (click)="onLoad(signupPage)">
+  <ion-icon name="person-add"></ion-icon>
+Sign Up
+</button>
+<button
+ion-item
+icon-left
+(click)="onLogout(signinPage)">
+<ion-icon name="log-out"></ion-icon>
+Out
+</button>
+<button
+ion-item
+icon-left
+(click)="onLoad(semuaPage)">
+<ion-icon name="restaurant"></ion-icon>
+ Semua Resep
+</button>
+<button
+ion-item
+icon-left
+(click)="onLoad(favoritePage)">
+<ion-icon name="heart"></ion-icon>
+Favorite
+</button>
+
+<button
+ion-item
+icon-left
+(click)="onLoad(padangPage)">
+<ion-icon name="restaurant"></ion-icon>
+Masakan Padang
+</button>
+<button
+ion-item
+icon-left
+(click)="onLoad(sundaPage)">
+<ion-icon name="restaurant"></ion-icon>
+Masakan Sunda
+</button>
+<button
+ion-item
+icon-left
+(click)="onLoad(jawaPage)">
+<ion-icon name="restaurant"></ion-icon>
+Masakan Jawa
+</button>
+<button
+ion-item
+icon-left
+(click)="onLoad(batakPage)">
+<ion-icon name="restaurant"></ion-icon>
+Masakan Batak
+</button>
+<button
+ion-item
+icon-left
+(click)="onLoad(ambonPage)">
+<ion-icon name="restaurant"></ion-icon>
+Masakan Ambon
+</button>
     </ion-list>
   </ion-content>
 
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="signinPage" #nav></ion-nav>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding id="bg">
+  <img src="assets/imgs/loku.png">
+<form #f="ngForm" (ngSubmit)="onSignin(f)">
+  <ion-list>
+      <ion-item>
+          <ion-label fixed>Nama </ion-label>
+          <ion-input type=”text”  name=”fullname” required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Email</ion-label>
+            <ion-input type=”email”  name=”email” required></ion-input>
+          </ion-item>
+    <ion-item>
+      <ion-label fixed>Username</ion-label>
+      <ion-input type=”text”  name=”username” required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type=”text”  name=”password” required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Confirm</ion-label>
+      <ion-input type=”text”  name=”confirmpass” required
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="Register()" type="submit" [disabled]="!f.valid">SUBMIT</button>
+  <button ion-button block (click)="Login()">SIGN IN</button>
+</form>
+</ion-content>
